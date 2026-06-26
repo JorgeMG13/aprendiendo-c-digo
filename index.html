@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Curso Python</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Python Game Lab PRO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🐍 Curso básico de Python</h1>
+<h1>🐍 Python Game Lab PRO</h1>
 
-<p>Responde las preguntas:</p>
-
-<div>
-    <p>1. ¿Qué función muestra texto?</p>
-    <input id="q1">
+<div id="menu">
+    <button onclick="irJuego()">🎮 Jugar niveles</button>
+    <button onclick="irEditor()">💻 Modo programador</button>
 </div>
 
-<div>
-    <p>2. ¿Cómo se hacen comentarios?</p>
-    <input id="q2">
+<!-- JUEGO -->
+<div id="juego" class="pantalla oculto">
+    <h2 id="nivelTitulo"></h2>
+
+    <p id="pregunta"></p>
+    <input id="respuesta">
+
+    <button onclick="comprobar()">Responder</button>
+
+    <p id="feedback"></p>
+    <p id="xp"></p>
+
+    <button onclick="volverMenu()">🏠 Menú</button>
 </div>
 
-<div>
-    <p>3. ¿Qué tipo es "hola"?</p>
-    <input id="q3">
+<!-- EDITOR -->
+<div id="editor" class="pantalla oculto">
+    <h2>💻 Mini Python (simulado)</h2>
+
+    <p>Escribe código tipo Python (print, variables simples):</p>
+
+    <textarea id="code" rows="8"></textarea>
+
+    <button onclick="ejecutar()">▶ Ejecutar</button>
+
+    <pre id="output"></pre>
+
+    <button onclick="volverMenu()">🏠 Menú</button>
 </div>
 
-<button onclick="enviar()">Enviar</button>
-
-<h2 id="resultado"></h2>
-
-<script src="/static/script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
